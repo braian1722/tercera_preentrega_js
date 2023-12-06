@@ -86,3 +86,69 @@ function filtrarProductos() {
     mostrarProductosFiltrados(productosFiltrados);
 }
 document.getElementById("buscador").addEventListener("input", filtrarProductos);
+
+/// VALIDACION DE FORMULARIO
+
+const e = (event) => {
+    event.preventDefault(); // Evitar el envío del formulario para probar la validación
+    validarFormulario();
+}
+
+const validarFormulario= () =>{
+    const formulario=document.getElementById('formulario');
+    const password = document.getElementById("password").value;
+    const nombre = document.getElementById("nombre").value;
+
+    const nombreValido = validaNombre(nombre);
+    const passwordValido = validarPassword(password);
+
+    if( nombreValido == true && passwordValido == true){
+        console.log("el formulario a sido enviado");
+        debugger
+
+    }else{
+        console.log("el formulario no fue enviado");
+        debugger
+    }
+}
+
+const validaNombre = (nombre) =>{
+    const caracteresEspeciales = /[!@#$%^&*(),.?":{}|<>]/.test(nombre);//test compara el las cadenas y si no hay una coincidencia nos devuelve falce en caso de haberla nos devuelve true
+    if(caracteresEspeciales == true){
+        console.log("El nombre no puede contener caracteres especiales");
+        return false;
+        debugger
+        
+    }else{
+        if (nombre.value != "" ) {
+            console.log("nombre ingresado corectamente");
+            debugger
+            return true;
+        }
+        else{
+            console.log("error en ingreso")
+            debugger
+            return false;
+            
+        }
+    }
+}
+const validarPassword = password => {
+    
+    // Validación del password: al menos una letra mayúscula y un número el cual si no igreso una mayuscula y un numero las dos constantes son falsa
+    const contieneMayuscula = /[A-Z]/.test(password);
+    const contieneNumero = /\d/.test(password);
+    if (contieneMayuscula == true && contieneNumero == true ) {
+        console.log("password ingresado corectamente");
+        debugger
+        return true;
+        
+    }else{
+        console.log("password ingresado incorectamente");
+        debugger
+        return false;
+        
+    }
+
+}
+document.getElementById('formulario').addEventListener('submit',e );
