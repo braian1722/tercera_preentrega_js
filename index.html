@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Tercera_Preentrega</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#section-form">Contactenos</a>
+                </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id="buscador"  class="form-control me-2"  type="search" placeholder="buscar producto" aria-label="Search">
+                </form>
+            </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="modal-section">
+        <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="listaCarrito" class="list-group"></ul>
+                        <br>
+                        <div id="total"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary"  data-dismiss="modal">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <h1>Te damos la bienvenida a nuestra tienda</h1>
+        <div class="contenedor-productos" id="productos">
+            <div class="producto">
+                <h4>Remera Git Hub</h4>
+                <img src="img/remera1.jpg" alt="remera git hub">
+                <p>15000</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera Git Hub',15000)">Agregar al Carrito</button>
+                
+            </div>
+            <div class="producto">
+                <h4>Remera SASS</h4>
+                <img src="img/remera2.jpg" alt="remera sass">
+                <p>15000</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera SASS',15000)">Agregar al Carrito</button>
+                
+            </div>
+            <div class="producto">
+                <h4>Remera AngularJs</h4>
+                <img src="img/remera3.jpg" alt="Remera AngularJs">
+                <p>15000</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera AngularJs',15000)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <h4>Remera NodeJs</h4>
+                <img src="img/remera4.jpg" alt="Remera NodeJs">
+                <p>15000</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera NodeJs',15000)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <h4>Remera Html</h4>
+                <img src="img/remera5.jpg" alt="Remera Html">
+                <p>17500</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera Html',17500)">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <h4>Remera JS</h4>
+                <img src="img/remera6.jpg" alt="Remera JS">
+                <p>21000</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Remera JS',21000)">Agregar al Carrito</button>
+                
+            </div>
+        </div>
+    </main>
+
+    <section id="section-form">
+        <div  class="form-container" id="div-form">
+            <h1 class="title-form">Formulario</h1>
+            <form id="formulario" >
+                <label>Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombre">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Email">
+                <label>Nombre</label>
+                <input type="password" id="password" placeholder="Password">
+                
+                <input type="submit" id="submit" value="Enviar">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Developer shop</h4>
+        
+        <div class="redes-sociales">
+            <a href="https://api.whatsapp.com/send?phone=5491112345678" target="_blank">
+                <img src="img/icons/whatsapp-icon.svg" alt="Icono" class="icono-redes">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="img/icons/facebook.svg" alt="Icono facebook" class="icono-redes">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="img/icons/instagram.svg" alt="Icono instagram" class="icono-redes">
+            </a>
+            
+        </div>
+        <p class="copy">Sitio web creado por braian kandyba de Coderhouse&copy;</p>
+    </footer>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
